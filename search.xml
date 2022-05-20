@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android 4.4KK 源码编译</title>
-    <url>/2019/03/13/Android-4.4KK-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><div class="note "><ul>
-<li>操作系统：👍🏻 Ubuntu 19.10 (Eoan Ermine)<br>下载地址：<a href="http://releases.ubuntu.com/19.10/">http://releases.ubuntu.com/19.10/</a></li>
-<li>JDK： 1.6.0_45<br>￼下载地址：<a href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html">https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html</a></li>
-</ul>
-</div>
-<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p> 1.安装JDK<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo mkdir /usr/local/jdk </span><br><span class="line">￼sudo cp /home/XXXX/Downloads/jdk-6u45-linux-x64.bin /usr/local/jdk</span><br><span class="line">￼cd /usr/local/jdk</span><br><span class="line">￼sudo chmod +x jdk-6u45-linux-x64.bin</span><br><span class="line">￼sudo ./jdk-6u45-linux-x64.bin</span><br></pre></td></tr></table></figure><br>2.配置环境变量<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/profile #打开配置文件,末尾添加</span><br><span class="line">export JAVA_HOME=/usr/local/jdk/jdk1.6.0_45</span><br><span class="line">export JRE_HOME=/usr/local/jdk/jdk1.6.0_45/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH</span><br></pre></td></tr></table></figure></p>
-<h3 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装mingw32)</span></span><br><span class="line">deb http://us.archive.ubuntu.com/ubuntu trusty main universe</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装libesd0-dev)，保存</span></span><br><span class="line">deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse</span><br><span class="line">sudo apt-get update</span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line">sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib </span><br><span class="line">sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386 </span><br><span class="line">sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386 </span><br><span class="line">sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev</span><br><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential  </span><br><span class="line">sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib </span><br><span class="line">sudo apt-get install libc6-dev-i386 </span><br><span class="line">sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev </span><br><span class="line">sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4</span><br><span class="line">sudo apt-get install lib32z-dev ccache</span><br></pre></td></tr></table></figure>
-<p><a href="/documents/install.sh">脚本</a><br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod a+x ./install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure></p>
-<h3 id="gcc-g"><a href="#gcc-g" class="headerlink" title="gcc | g++"></a>gcc | g++</h3><p>￼1.降级gcc g++<br>     apt-get install gcc-4.4<br>     apt-get install g++-4.4<br>2.gcc|g++ 链接到4.4版本,指令：<br>    <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls -l g++*</span><br><span class="line">sudo mv g++ g++.bak</span><br><span class="line">sudo ln -s g++-4.4 g++</span><br><span class="line">ls -l gcc*</span><br><span class="line">sudo mv gcc gcc.bak</span><br><span class="line">sudo ln -s gcc-4.4 gcc </span><br><span class="line">gcc -v</span><br><span class="line">g++ -v</span><br></pre></td></tr></table></figure></p>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3>   <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 到项目根目录</span><br><span class="line">source build/envsetup.sh  |  source XXXX/envsetup.sh</span><br><span class="line">选择编译项目</span><br><span class="line">kheader</span><br><span class="line">make -j8</span><br><span class="line">./XXXX/CopyImages.sh -p #打包</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Android</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Charles 抓 Https</title>
-    <url>/2019/04/26/Charles-%E6%8A%93-Https/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
-<li><h3 id="Charles-配置证书"><a href="#Charles-配置证书" class="headerlink" title="Charles 配置证书"></a>Charles 配置证书</h3><p><img src="/images/11556265698_.pic_hd.jpg" alt="image.png"><br>钥匙串同意证书<br><img src="/images/21556265734_.pic_hd.jpg" alt="image.png"></p>
-</li>
-<li><h3 id="手机端安装证书"><a href="#手机端安装证书" class="headerlink" title="手机端安装证书"></a>手机端安装证书</h3><p><img src="/images/41556265929_.pic_hd.jpg" alt="image.png"><br><img src="/images/31556265889_.pic_hd.jpg" alt="image.png"><br>手机依图设置好代理并安装证书</p>
-</li>
-<li><h3 id="手机端安装证书-1"><a href="#手机端安装证书-1" class="headerlink" title="手机端安装证书"></a>手机端安装证书</h3><img src="/images/51556266514_.pic_hd.jpg" alt="image.png"><br><img src="/images/61556266572_.pic_hd.jpg" alt="image.png"><br>点击SSL Proxying Settings，Host填写要抓取的ip或域名，port默认填写443</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>CocoaPods</title>
     <url>/2018/10/22/CocoaPods/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>CocoaPods是Swift和Objective-C Cocoa项目的依赖管理器。</p>
@@ -50,6 +19,18 @@
       <tags>
         <tag>Pods</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Charles 抓 Https</title>
+    <url>/2019/04/26/Charles-%E6%8A%93-Https/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
+<li><h3 id="Charles-配置证书"><a href="#Charles-配置证书" class="headerlink" title="Charles 配置证书"></a>Charles 配置证书</h3><p><img src="/images/11556265698_.pic_hd.jpg" alt="image.png"><br>钥匙串同意证书<br><img src="/images/21556265734_.pic_hd.jpg" alt="image.png"></p>
+</li>
+<li><h3 id="手机端安装证书"><a href="#手机端安装证书" class="headerlink" title="手机端安装证书"></a>手机端安装证书</h3><p><img src="/images/41556265929_.pic_hd.jpg" alt="image.png"><br><img src="/images/31556265889_.pic_hd.jpg" alt="image.png"><br>手机依图设置好代理并安装证书</p>
+</li>
+<li><h3 id="手机端安装证书-1"><a href="#手机端安装证书-1" class="headerlink" title="手机端安装证书"></a>手机端安装证书</h3><img src="/images/51556266514_.pic_hd.jpg" alt="image.png"><br><img src="/images/61556266572_.pic_hd.jpg" alt="image.png"><br>点击SSL Proxying Settings，Host填写要抓取的ip或域名，port默认填写443</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Flutter</title>
@@ -72,6 +53,25 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git filter-branch -f --env-filter &#x27;</span><br><span class="line">OLD_EMAIL=&quot;hexyz@Hexyz.local&quot;</span><br><span class="line">CORRECT_NAME=&quot;Hexyz&quot;</span><br><span class="line">CORRECT_EMAIL=&quot;hi@hexyz.cn&quot;</span><br><span class="line">if [ &quot;$GIT_COMMITTER_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">export GIT_COMMITTER_NAME=&quot;$CORRECT_NAME&quot;</span><br><span class="line">export GIT_COMMITTER_EMAIL=&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">if [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">export GIT_AUTHOR_NAME=&quot;$CORRECT_NAME&quot;</span><br><span class="line">export GIT_AUTHOR_EMAIL=&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">&#x27; --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android 4.4KK 源码编译</title>
+    <url>/2019/03/13/Android-4.4KK-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><div class="note "><ul>
+<li>操作系统：👍🏻 Ubuntu 19.10 (Eoan Ermine)<br>下载地址：<a href="http://releases.ubuntu.com/19.10/">http://releases.ubuntu.com/19.10/</a></li>
+<li>JDK： 1.6.0_45<br>￼下载地址：<a href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html">https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html</a></li>
+</ul>
+</div>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p> 1.安装JDK<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo mkdir /usr/local/jdk </span><br><span class="line">￼sudo cp /home/XXXX/Downloads/jdk-6u45-linux-x64.bin /usr/local/jdk</span><br><span class="line">￼cd /usr/local/jdk</span><br><span class="line">￼sudo chmod +x jdk-6u45-linux-x64.bin</span><br><span class="line">￼sudo ./jdk-6u45-linux-x64.bin</span><br></pre></td></tr></table></figure><br>2.配置环境变量<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/profile #打开配置文件,末尾添加</span><br><span class="line">export JAVA_HOME=/usr/local/jdk/jdk1.6.0_45</span><br><span class="line">export JRE_HOME=/usr/local/jdk/jdk1.6.0_45/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH</span><br></pre></td></tr></table></figure></p>
+<h3 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装mingw32)</span></span><br><span class="line">deb http://us.archive.ubuntu.com/ubuntu trusty main universe</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装libesd0-dev)，保存</span></span><br><span class="line">deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse</span><br><span class="line">sudo apt-get update</span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line">sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib </span><br><span class="line">sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386 </span><br><span class="line">sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386 </span><br><span class="line">sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev</span><br><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential  </span><br><span class="line">sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib </span><br><span class="line">sudo apt-get install libc6-dev-i386 </span><br><span class="line">sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev </span><br><span class="line">sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4</span><br><span class="line">sudo apt-get install lib32z-dev ccache</span><br></pre></td></tr></table></figure>
+<p><a href="/documents/install.sh">脚本</a><br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod a+x ./install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="gcc-g"><a href="#gcc-g" class="headerlink" title="gcc | g++"></a>gcc | g++</h3><p>￼1.降级gcc g++<br>     apt-get install gcc-4.4<br>     apt-get install g++-4.4<br>2.gcc|g++ 链接到4.4版本,指令：<br>    <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls -l g++*</span><br><span class="line">sudo mv g++ g++.bak</span><br><span class="line">sudo ln -s g++-4.4 g++</span><br><span class="line">ls -l gcc*</span><br><span class="line">sudo mv gcc gcc.bak</span><br><span class="line">sudo ln -s gcc-4.4 gcc </span><br><span class="line">gcc -v</span><br><span class="line">g++ -v</span><br></pre></td></tr></table></figure></p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3>   <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 到项目根目录</span><br><span class="line">source build/envsetup.sh  |  source XXXX/envsetup.sh</span><br><span class="line">选择编译项目</span><br><span class="line">kheader</span><br><span class="line">make -j8</span><br><span class="line">./XXXX/CopyImages.sh -p #打包</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Android</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -136,11 +136,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac 关闭端口</title>
+    <url>/2019/06/21/Mac-%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
+<li>执行命令<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">lsof -i:端口</span><br></pre></td></tr></table></figure></li>
+<li>返回类似结果<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">main    99710 hexyz    7u  IPv6 0xf1382abd7ac26d49      0t0  TCP *:glrpc (LISTEN)</span><br></pre></td></tr></table></figure></li>
+<li>再次执行<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kill -9 99710</span><br></pre></td></tr></table></figure></li>
+<li>End</li>
+</ul>
+]]></content>
+      <categories>
+        <category></category>
+      </categories>
+  </entry>
+  <entry>
     <title>Mac 删除自带ABC输入法</title>
     <url>/2018/12/24/Mac-%E5%88%A0%E9%99%A4%E8%87%AA%E5%B8%A6ABC%E8%BE%93%E5%85%A5%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 使用 MetingJS 插入歌曲列表 -->
 
-    <div id="aplayer-DnZjtSXD" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-qKtSRfks" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="001YVedc0AHGbf" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 <h3 id="关闭系统-SIP"><a href="#关闭系统-SIP" class="headerlink" title="关闭系统 SIP"></a>关闭系统 SIP</h3><div class="note "><p>OS X El Capitan 开始，苹果桌面操作系统为 Mac 电脑提供一个被称作系统完整性保护（System Integrity Protection，SIP）的功能。该功能被设计通过限制根用户账号的权限以及防止未经授权对受保护的文件和文件夹进行访问等措施让用户的 Mac 电脑免于恶意软件的攻击。</p>
@@ -169,20 +183,6 @@
       <tags>
         <tag>Mac</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Mac 关闭端口</title>
-    <url>/2019/06/21/Mac-%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
-<li>执行命令<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">lsof -i:端口</span><br></pre></td></tr></table></figure></li>
-<li>返回类似结果<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">main    99710 hexyz    7u  IPv6 0xf1382abd7ac26d49      0t0  TCP *:glrpc (LISTEN)</span><br></pre></td></tr></table></figure></li>
-<li>再次执行<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kill -9 99710</span><br></pre></td></tr></table></figure></li>
-<li>End</li>
-</ul>
-]]></content>
-      <categories>
-        <category></category>
-      </categories>
   </entry>
   <entry>
     <title>My Mac</title>
@@ -265,19 +265,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Yarn</title>
-    <url>/2018/11/19/Yarn/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><a href="https://yarn.bootcss.com/">简介</a></h3><p>Facebook官方出品，用以替换npm。快速、可靠、安全的依赖管理。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
-<h3 id="CLI「详细文档」"><a href="#CLI「详细文档」" class="headerlink" title="CLI「详细文档」"></a>CLI「<a href="https://yarnpkg.com/zh-Hans/docs/cli/">详细文档</a>」</h3><ul>
-<li>yarn add：为当前正在开发的包新增一个依赖包；</li>
-<li>yarn init：初始化包；</li>
-<li>yarn install：安装package.json 文件里定义的所有依赖包；</li>
-<li>yarn publish：发布一个包到包管理器；</li>
-<li>yarn remove：从当前包里移除一个未使用的包。</li>
-<li>yarn：等同于执行yarn install，并透传所有参数。</li>
+    <title>Go</title>
+    <url>/2022/05/20/go/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
+<li><h2 id="go-mod"><a href="#go-mod" class="headerlink" title="go mod"></a>go mod</h2></li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> init</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> project_folder</span></span><br><span class="line">go mod init &lt;project_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 常用指令</span></span><br><span class="line">go mod download # 下载模块到本地缓存，缓存路径是 $GOPATH/pkg/mod/cache</span><br><span class="line">go mod edit # 是提供了命令版编辑 go.mod 的功能，例如 go mod edit -fmt go.mod 会格式化 go.mod</span><br><span class="line">go mod graph # 把模块之间的依赖图显示出来</span><br><span class="line">go mod init # 初始化模块（例如把原本dep管理的依赖关系转换过来）</span><br><span class="line">go mod tidy # 增加缺失的包，移除没用的包</span><br><span class="line">go mod vendor #  把依赖拷贝到 vendor/ 目录下</span><br><span class="line">go mod verify # 确认依赖关系</span><br><span class="line">go mod why #  解释为什么需要包和模块</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Go</category>
+      </categories>
   </entry>
   <entry>
     <title>CATransform3D</title>
@@ -293,5 +290,20 @@
       <categories>
         <category>iOS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Yarn</title>
+    <url>/2018/11/19/Yarn/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><a href="https://yarn.bootcss.com/">简介</a></h3><p>Facebook官方出品，用以替换npm。快速、可靠、安全的依赖管理。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+<h3 id="CLI「详细文档」"><a href="#CLI「详细文档」" class="headerlink" title="CLI「详细文档」"></a>CLI「<a href="https://yarnpkg.com/zh-Hans/docs/cli/">详细文档</a>」</h3><ul>
+<li>yarn add：为当前正在开发的包新增一个依赖包；</li>
+<li>yarn init：初始化包；</li>
+<li>yarn install：安装package.json 文件里定义的所有依赖包；</li>
+<li>yarn publish：发布一个包到包管理器；</li>
+<li>yarn remove：从当前包里移除一个未使用的包。</li>
+<li>yarn：等同于执行yarn install，并透传所有参数。</li>
+</ul>
+]]></content>
   </entry>
 </search>
