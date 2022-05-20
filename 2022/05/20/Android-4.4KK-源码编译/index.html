@@ -24,20 +24,21 @@
     var CONFIG = {"hostname":"blog.hexyz.cn","root":"/","scheme":"Mist","version":"8.0.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}};
   </script>
 
-  <meta name="description" content="go import1234567import(    &quot;time&quot; &#x2F;&#x2F;普通写法    . &quot;fmt&quot; &#x2F;&#x2F;使用此包内的成员时不带fmt前缀    j &quot;encoding&#x2F;json&quot; &#x2F;&#x2F;json包重命名    _ &quot;net&quot; &#x2F;&amp;#x2F">
+  <meta name="description" content="操作系统：👍🏻 Ubuntu 19.10 (Eoan Ermine)下载地址：http:&#x2F;&#x2F;releases.ubuntu.com&#x2F;19.10&#x2F; JDK： 1.6.0_45￼下载地址：https:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;java-archive-downloads-javase6-419409.html   JDK">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go">
-<meta property="og:url" content="http://blog.hexyz.cn/2022/05/20/go/index.html">
+<meta property="og:title" content="Android 4.4KK 源码编译">
+<meta property="og:url" content="http://blog.hexyz.cn/2022/05/20/Android-4.4KK-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="H Ξ Ⅹ 〒 Ƶ">
-<meta property="og:description" content="go import1234567import(    &quot;time&quot; &#x2F;&#x2F;普通写法    . &quot;fmt&quot; &#x2F;&#x2F;使用此包内的成员时不带fmt前缀    j &quot;encoding&#x2F;json&quot; &#x2F;&#x2F;json包重命名    _ &quot;net&quot; &#x2F;&amp;#x2F">
+<meta property="og:description" content="操作系统：👍🏻 Ubuntu 19.10 (Eoan Ermine)下载地址：http:&#x2F;&#x2F;releases.ubuntu.com&#x2F;19.10&#x2F; JDK： 1.6.0_45￼下载地址：https:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;java-archive-downloads-javase6-419409.html   JDK">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-20T14:15:45.044Z">
-<meta property="article:modified_time" content="2022-05-20T15:04:51.760Z">
-<meta property="article:tag" content="iOS ObjC Swift Android Java Go">
+<meta property="article:published_time" content="2022-05-20T07:19:07.147Z">
+<meta property="article:modified_time" content="2022-05-20T15:06:34.804Z">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://blog.hexyz.cn/2022/05/20/go/">
+<link rel="canonical" href="http://blog.hexyz.cn/2022/05/20/Android-4.4KK-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
 
 
 <script class="page-configurations">
@@ -50,7 +51,7 @@
   };
 </script>
 
-  <title>Go | H Ξ Ⅹ 〒 Ƶ</title>
+  <title>Android 4.4KK 源码编译 | H Ξ Ⅹ 〒 Ƶ</title>
   
 
 
@@ -205,7 +206,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#go-import"><span class="nav-number">1.</span> <span class="nav-text">go import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#go-mod"><span class="nav-number">2.</span> <span class="nav-text">go mod</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK"><span class="nav-number">1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96"><span class="nav-number">2.</span> <span class="nav-text">环境依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-g"><span class="nav-number">3.</span> <span class="nav-text">gcc | g++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">4.</span> <span class="nav-text">编译</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -282,7 +283,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.hexyz.cn/2022/05/20/go/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hexyz.cn/2022/05/20/Android-4.4KK-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -295,7 +296,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Go
+          Android 4.4KK 源码编译
         </h1>
 
         <div class="post-meta-container">
@@ -305,17 +306,8 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-05-20 23:04:51" itemprop="dateModified" datetime="2022-05-20T23:04:51+08:00">2022-05-20</time>
+        <time title="修改时间：2022-05-20 23:06:34" itemprop="dateModified" datetime="2022-05-20T23:06:34+08:00">2022-05-20</time>
       </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
-        </span>
-    </span>
 
   
 </div>
@@ -327,8 +319,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="go-import"><a href="#go-import" class="headerlink" title="go import"></a>go import</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import(</span><br><span class="line">    &quot;time&quot; &#x2F;&#x2F;普通写法</span><br><span class="line">    . &quot;fmt&quot; &#x2F;&#x2F;使用此包内的成员时不带fmt前缀</span><br><span class="line">    j &quot;encoding&#x2F;json&quot; &#x2F;&#x2F;json包重命名</span><br><span class="line">    _ &quot;net&quot; &#x2F;&#x2F;仅执行net包中的init方法，不能调用该包成员</span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h3 id="go-mod"><a href="#go-mod" class="headerlink" title="go mod"></a>go mod</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> init</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> project_folder</span></span><br><span class="line">go mod init &lt;project_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 常用指令</span></span><br><span class="line">go mod download # 下载模块到本地缓存，缓存路径是 $GOPATH/pkg/mod/cache</span><br><span class="line">go mod edit # 是提供了命令版编辑 go.mod 的功能，例如 go mod edit -fmt go.mod 会格式化 go.mod</span><br><span class="line">go mod graph # 把模块之间的依赖图显示出来</span><br><span class="line">go mod init # 初始化模块（例如把原本dep管理的依赖关系转换过来）</span><br><span class="line">go mod tidy # 增加缺失的包，移除没用的包</span><br><span class="line">go mod vendor #  把依赖拷贝到 vendor/ 目录下</span><br><span class="line">go mod verify # 确认依赖关系</span><br><span class="line">go mod why #  解释为什么需要包和模块</span><br></pre></td></tr></table></figure>
+        <div class="note "><ul>
+<li>操作系统：👍🏻 Ubuntu 19.10 (Eoan Ermine)<br>下载地址：<a target="_blank" rel="noopener" href="http://releases.ubuntu.com/19.10/">http://releases.ubuntu.com/19.10/</a></li>
+<li>JDK： 1.6.0_45<br>￼下载地址：<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html">https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html</a></li>
+</ul>
+</div>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p> 1.安装JDK</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/jdk </span><br><span class="line">￼sudo cp /home/XXXX/Downloads/jdk-6u45-linux-x64.bin /usr/local/jdk</span><br><span class="line">￼cd /usr/local/jdk</span><br><span class="line">￼sudo chmod +x jdk-6u45-linux-x64.bin</span><br><span class="line">￼sudo ./jdk-6u45-linux-x64.bin</span><br></pre></td></tr></table></figure>
+<p>2.配置环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile #打开配置文件,末尾添加</span><br><span class="line">export JAVA_HOME=/usr/local/jdk/jdk1.6.0_45</span><br><span class="line">export JRE_HOME=/usr/local/jdk/jdk1.6.0_45/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH</span><br></pre></td></tr></table></figure>
+<h3 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装mingw32)</span></span><br><span class="line">deb http://us.archive.ubuntu.com/ubuntu trusty main universe</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在sources.list末尾添加(用于安装libesd0-dev)，保存</span></span><br><span class="line">deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse</span><br><span class="line">sudo apt-get update</span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line">sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib </span><br><span class="line">sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386 </span><br><span class="line">sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386 </span><br><span class="line">sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev</span><br><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential  </span><br><span class="line">sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib </span><br><span class="line">sudo apt-get install libc6-dev-i386 </span><br><span class="line">sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev </span><br><span class="line">sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4</span><br><span class="line">sudo apt-get install lib32z-dev ccache</span><br></pre></td></tr></table></figure>
+<p><a href="/documents/install.sh">脚本</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x ./install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<h3 id="gcc-g"><a href="#gcc-g" class="headerlink" title="gcc | g++"></a>gcc | g++</h3><p>1.降级gcc g++<br>     apt-get install gcc-4.4<br>     apt-get install g++-4.4<br>2.gcc|g++ 链接到4.4版本,指令：</p>
+<pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls -l g++*</span><br><span class="line">sudo mv g++ g++.bak</span><br><span class="line">sudo ln -s g++-4.4 g++</span><br><span class="line">ls -l gcc*</span><br><span class="line">sudo mv gcc gcc.bak</span><br><span class="line">sudo ln -s gcc-4.4 gcc </span><br><span class="line">gcc -v</span><br><span class="line">g++ -v</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3>   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd 到项目根目录</span><br><span class="line">source build/envsetup.sh  |  source XXXX/envsetup.sh</span><br><span class="line">选择编译项目</span><br><span class="line">kheader</span><br><span class="line">make -j8</span><br><span class="line">./XXXX/CopyImages.sh -p #打包</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -337,16 +342,23 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/20/Java/" rel="prev" title="Mac 安装 Java">
-                  <i class="fa fa-chevron-left"></i> Mac 安装 Java
+                <a href="/2022/05/20/Charles-%E6%8A%93-Https/" rel="prev" title="Charles 抓 Https">
+                  <i class="fa fa-chevron-left"></i> Charles 抓 Https
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/05/20/Mac-%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3/" rel="next" title="Mac 关闭端口">
+                  Mac 关闭端口 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

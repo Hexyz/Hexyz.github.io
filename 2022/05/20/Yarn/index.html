@@ -24,16 +24,20 @@
     var CONFIG = {"hostname":"blog.hexyz.cn","root":"/","scheme":"Mist","version":"8.0.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="H Ξ Ⅹ 〒 Ƶ">
-<meta property="og:url" content="http://blog.hexyz.cn/archives/2022/index.html">
+  <meta name="description" content="简介Facebook官方出品，用以替换npm。快速、可靠、安全的依赖管理。 安装1brew install yarn CLI「详细文档」 yarn add：为当前正在开发的包新增一个依赖包； yarn init：初始化包； yarn install：安装package.json 文件里定义的所有依赖包； yarn publish：发布一个包到包管理器； yarn remove：从当前包里移除一个未">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yarn">
+<meta property="og:url" content="http://blog.hexyz.cn/2022/05/20/Yarn/index.html">
 <meta property="og:site_name" content="H Ξ Ⅹ 〒 Ƶ">
+<meta property="og:description" content="简介Facebook官方出品，用以替换npm。快速、可靠、安全的依赖管理。 安装1brew install yarn CLI「详细文档」 yarn add：为当前正在开发的包新增一个依赖包； yarn init：初始化包； yarn install：安装package.json 文件里定义的所有依赖包； yarn publish：发布一个包到包管理器； yarn remove：从当前包里移除一个未">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-20T07:19:07.149Z">
+<meta property="article:modified_time" content="2022-05-20T15:06:34.788Z">
 <meta property="article:tag" content="iOS ObjC Swift Android Java Go">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://blog.hexyz.cn/archives/2022/">
+<link rel="canonical" href="http://blog.hexyz.cn/2022/05/20/Yarn/">
 
 
 <script class="page-configurations">
@@ -41,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | H Ξ Ⅹ 〒 Ƶ</title>
+  <title>Yarn | H Ξ Ⅹ 〒 Ƶ</title>
   
 
 
@@ -189,7 +193,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -201,6 +205,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI%E3%80%8C%E8%AF%A6%E7%BB%86%E6%96%87%E6%A1%A3%E3%80%8D"><span class="nav-number">3.</span> <span class="nav-text">CLI「详细文档」</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -264,236 +269,94 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 16 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.hexyz.cn/2022/05/20/Yarn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="H Ξ Ⅹ 〒 Ƶ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Yarn
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-05-20 23:06:34" itemprop="dateModified" datetime="2022-05-20T23:06:34+08:00">2022-05-20</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><a target="_blank" rel="noopener" href="https://yarn.bootcss.com/">简介</a></h3><p>Facebook官方出品，用以替换npm。快速、可靠、安全的依赖管理。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+<h3 id="CLI「详细文档」"><a href="#CLI「详细文档」" class="headerlink" title="CLI「详细文档」"></a>CLI「<a target="_blank" rel="noopener" href="https://yarnpkg.com/zh-Hans/docs/cli/">详细文档</a>」</h3><ul>
+<li>yarn add：为当前正在开发的包新增一个依赖包；</li>
+<li>yarn init：初始化包；</li>
+<li>yarn install：安装package.json 文件里定义的所有依赖包；</li>
+<li>yarn publish：发布一个包到包管理器；</li>
+<li>yarn remove：从当前包里移除一个未使用的包。</li>
+<li>yarn：等同于执行yarn install，并透传所有参数。</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T22:15:45+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/go/" itemprop="url">
-            <span itemprop="name">Go</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/20/Flutter/" rel="prev" title="Flutter">
+                  <i class="fa fa-chevron-left"></i> Flutter
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/20/NodeJS/" rel="next" title="Node.js">
+                  Node.js <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T18:15:01+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/Java/" itemprop="url">
-            <span itemprop="name">Mac 安装 Java</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/CATransform3D/" itemprop="url">
-            <span itemprop="name">CATransform3D</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/Mac-%E5%88%A0%E9%99%A4%E8%87%AA%E5%B8%A6ABC%E8%BE%93%E5%85%A5%E6%B3%95/" itemprop="url">
-            <span itemprop="name">Mac 删除自带ABC输入法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/My-Mac/" itemprop="url">
-            <span itemprop="name">My Mac</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/My-Ubuntu/" itemprop="url">
-            <span itemprop="name">My Ubuntu</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/NodeJS/" itemprop="url">
-            <span itemprop="name">Node.js</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/Yarn/" itemprop="url">
-            <span itemprop="name">Yarn</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/Flutter/" itemprop="url">
-            <span itemprop="name">Flutter</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-20T15:19:07+08:00"
-              content="2022-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/20/Hexo-%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/" itemprop="url">
-            <span itemprop="name">Hexo 创建个人Blog</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
